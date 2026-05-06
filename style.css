@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  color: #ededed;
+  background: linear-gradient(135deg, #081b29 0%, #0a2540 50%, #0d2f52 100%);
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10px;
+  background: rgba(8, 27, 41, 0.6);       /* glass effect */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 171, 240, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 25px;
+  background: linear-gradient(90deg, #ededed, #00abf0);  /* gradient logo */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* ── NAVBAR ── fixed selector (was .navber) ── */
+.navbar a {
+  font-size: 18px;
+  color: #a0c4d8;                           /* softer than pure white */
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: color .3s;
+}
+
+.navbar a:hover,
+.navbar a:active {
+  color: #00abf0;
+}
+
+/* ── HOME ── */
+.home {
+  height: 100vh;
+  background: url(./img.jpeg) no-repeat center center / cover;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;                           /* fixed: was "0 10" (missing unit) */
+  position: relative;
+}
+
+/* subtle radial glow overlaid on the bg image */
+.home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(0,171,240,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 80%, rgba(0,171,240,0.08) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(8,27,41,0.85) 0%, rgba(8,27,41,0.5) 100%);
+  pointer-events: none;
+}
+
+.home-content {
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+}
+
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.home-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #00abf0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* gradient accent on your name/title */
+.home-content h1 span {
+  background: linear-gradient(90deg, #00abf0, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.home-content p {
+  font-size: 16px;
+  color: #7fa8c0;
+  margin: 20px 0 40px;
+  line-height: 1.7;
+}
+
+/* ── BUTTONS ── */
+.home-content .btn-box {
+  display: flex;
+  gap: 16px;
+  width: 345px;
+  height: 50px;
+}
+
+.btn-box a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all .4s;
+  z-index: 1;
+}
+
+/* Primary button — gradient fill */
+.btn-box a:first-child {
+  background: linear-gradient(135deg, #00abf0, #0077c2);
+  color: #081b29;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 171, 240, 0.4);
+}
+
+.btn-box a:first-child:hover {
+  box-shadow: 0 6px 32px rgba(0, 171, 240, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Secondary button — outlined */
+.btn-box a:nth-child(2) {
+  background: transparent;
+  color: #00abf0;
+  border: 2px solid rgba(0, 171, 240, 0.5);
+}
+
+.btn-box a:nth-child(2):hover {
+  background: rgba(0, 171, 240, 0.1);
+  border-color: #00abf0;
+  box-shadow: 0 4px 20px rgba(0, 171, 240, 0.2);
+}
+
+/* ── SOCIAL ICONS ── */
+.home-sci {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  gap: 14px;
+}
+
+.home-sci a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 171, 240, 0.05);
+  border: 1.5px solid rgba(0, 171, 240, 0.4);
+  border-radius: 50%;
+  font-size: 20px;
+  color: #00abf0;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.home-sci a:hover {
+  background: rgba(0, 171, 240, 0.15);
+  border-color: #00abf0;
+  box-shadow: 0 0 16px rgba(0, 171, 240, 0.3);
+  transform: translateY(-3px);
+}
